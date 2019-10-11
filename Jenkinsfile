@@ -3,6 +3,7 @@ node{
  git 'https://github.com/sunil1258/finance'
  }
  stage('Compile-Package'){
-    sh 'mvn package'
+   def mvnhome= tool name: 'maven', type: 'maven'
+   sh "${mvnhome}/bin/mvn package"
  }
 }
